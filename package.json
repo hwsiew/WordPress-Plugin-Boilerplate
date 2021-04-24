@@ -4,6 +4,7 @@
   "description": "A standardized, organized, object-oriented foundation for building high-quality WordPress Plugins.",
   "main": "index.js",
   "scripts": {
+    "preinit": "node ./scripts/generateCert.js",
     "init": "node ./scripts/init.js",
     "start": "docker-compose up -d",
     "stop": "docker-compose down",
@@ -19,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/hwsiew/WordPress-Plugin-Boilerplate/issues"
   },
-  "homepage": "https://github.com/hwsiew/WordPress-Plugin-Boilerplate#readme"
+  "homepage": "https://github.com/hwsiew/WordPress-Plugin-Boilerplate#readme",
+  "devDependencies": {
+    "selfsigned": "^1.10.8"
+  }
 }
