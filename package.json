@@ -1,0 +1,23 @@
+{
+  "name": "WordPress-Plugin-Boilerplate",
+  "version": "1.0.0",
+  "description": "A standardized, organized, object-oriented foundation for building high-quality WordPress Plugins.",
+  "main": "index.js",
+  "scripts": {
+    "init": "node ./scripts/init.js",
+    "start": "docker-compose up -d",
+    "stop": "docker-compose down",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hwsiew/WordPress-Plugin-Boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hwsiew/WordPress-Plugin-Boilerplate/issues"
+  },
+  "homepage": "https://github.com/hwsiew/WordPress-Plugin-Boilerplate#readme"
+}
