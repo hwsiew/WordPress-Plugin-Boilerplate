@@ -1,3 +1,5 @@
+import './css/public.css'
+
 (function( $ ) {
 	'use strict';
 
