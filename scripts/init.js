@@ -39,7 +39,7 @@ rl.question("What is the plugin name? (default: wp-dev)", function(project) {
 				if ( !db_pswd ) db_pswd = 'dbpassword';
 
 				// plugin name to plugin-name
-				let name_dash = project.replace(/\s+/g, '-').toLowerCase();
+				let slug = project.replace(/\s+/g, '-').toLowerCase();
 				// plugin name to plugin_name
 				let name_underscore = project.replace(/[-|\s]+/g, '_').toLowerCase();
 				
@@ -50,7 +50,8 @@ rl.question("What is the plugin name? (default: wp-dev)", function(project) {
 				let cap_whole = token.map( w => w.toUpperCase() ).join('_') + '_';
 
 				// content of .env
-				let content = `PROJECT=${name_dash}\n`;
+				let content = `NAME=${project}\n`; 
+				content += `SLUG=${slug}\n`;
 				content += `DB_NAME=${db_name}\n`;
 				content += `DB_USER=${db_user}\n`;
 				content += `DB_PASSWORD=${db_pswd}\n`;
@@ -61,16 +62,16 @@ rl.question("What is the plugin name? (default: wp-dev)", function(project) {
 					fs.writeFileSync('.env', content);
 
 					let default_dir    = 'plugin-name';
-					fs.renameSync(default_dir, name_dash);
+					fs.renameSync(default_dir, slug);
 
-					let files = getFilesRecursively(name_dash);
+					let files = getFilesRecursively(slug);
 
 					files
 					.map( file => {
 						// replace content with new project name
 						let data = fs.readFileSync( file, {encoding:'utf8'} );
 						let replacement = data.replace(/plugin_name/g, name_underscore);
-						replacement = replacement.replace(/plugin-name/g, name_dash);
+						replacement = replacement.replace(/plugin-name/g, slug);
 						replacement = replacement.replace(/Plugin_Name/g, cap_first);
 						replacement = replacement.replace(/PLUGIN_NAME_/g, cap_whole);
 						fs.writeFileSync(file, replacement);
@@ -83,7 +84,7 @@ rl.question("What is the plugin name? (default: wp-dev)", function(project) {
 					})
 					.forEach( file => {
 						// rename files with project name
-      					let	newFilePath = file.replace(/plugin-name/g, name_dash);
+      					let	newFilePath = file.replace(/plugin-name/g, slug);
 						fs.renameSync(file, newFilePath);
 					});
 

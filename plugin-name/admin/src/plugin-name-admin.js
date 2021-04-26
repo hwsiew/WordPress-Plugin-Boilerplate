@@ -1,3 +1,5 @@
+import "./css/admin.css";
+
 (function( $ ) {
 	'use strict';
 
