@@ -1,15 +1,6 @@
-# WordPress Plugin Boilerplate
+# WordPress Plugin Starter Kit
 
-A standardized, organized, object-oriented foundation for building high-quality WordPress Plugins.
-
-## Contents
-
-The WordPress Plugin Boilerplate includes the following files:
-
-* `.gitignore`. Used to exclude certain files from the repository.
-* `CHANGELOG.md`. The list of changes to the core project.
-* `README.md`. The file that you’re currently reading.
-* A `plugin-name` directory that contains the source code - a fully executable WordPress plugin.
+This project builds on top of the popular [WordPress Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate) to ease the development of WordPress Plugin. While WordPress Plugin Boilerplate offers a standardized, organized, object-oriented foundation for building high-quality WordPress Plugins. This extends various common development/build tools to speed up your WordPress plugin development.
 
 ## Features
 
@@ -17,10 +8,29 @@ The WordPress Plugin Boilerplate includes the following files:
 * All classes, functions, and variables are documented so that you know what you need to change.
 * The Boilerplate uses a strict file organization scheme that corresponds both to the WordPress Plugin Repository structure, and that makes it easy to organize the files that compose the plugin.
 * The project includes a `.pot` file as a starting point for internationalization.
+* Docker containers to easily create a local development environment
+* and more to come...
+
+## Prerequisites
+
+This project uses common development stack, and your local machine needs the support of the following
+* [Docker Desktop](https://www.docker.com/products/docker-desktop) - to create local development environment
+* [Node.js](https://nodejs.org/en/) - npm dependency and scripts
 
 ## Installation
 
-The Boilerplate can be installed directly into your plugins folder "as-is". You will want to rename it and the classes inside of it to fit your needs. For example, if your plugin is named 'example-me' then:
+Clone this project to your local development machine and follow the instructions below to kick start your WordPress plugin development. 
+
+1. run `npm install` - to install all dependency
+2. run `npm run init` - to initialize the project such as, plugin name and etc.
+3. run `npm run start` - to start the docker containers for local Wordpress.
+4. go https://localhost on your prefer browser to complete wordpress installation.
+5. login with the credentials you just created by going https://localhost/wp-admin
+6. navigate to plugins section and activate 'WordPress Plugin Boilerplate'. Note: you may change the plugin name whatever you like.
+7. you may then start building your awesome WordPress plugin in the folder name 'plugin-name' (example-me).
+8. run `npm run stop` - to stop docker containers.
+
+After running `npm run init`, plugin folder will be setup by replacing all folders and files with the following details. For example, when 'example me' is entered for plugin name. 
 
 * rename files from `plugin-name` to `example-me`
 * change `plugin_name` to `example_me`
@@ -77,23 +87,3 @@ Note that if you include your own classes, or third-party libraries, there are t
 Note that previous versions of the Boilerplate did not include `Plugin_Name_Loader` but this class is used to register all filters and actions with WordPress.
 
 The example code provided shows how to register your hooks with the Loader class.
-
-### What About Other Features?
-
-The previous version of the WordPress Plugin Boilerplate included support for a number of different projects such as the [GitHub Updater](https://github.com/afragen/github-updater).
-
-These tools are not part of the core of this Boilerplate, as I see them as being additions, forks, or other contributions to the Boilerplate.
-
-The same is true of using tools like Grunt, Composer, etc. These are all fantastic tools, but not everyone uses them. In order to  keep the core Boilerplate as light as possible, these features have been removed and will be introduced in other editions, and will be listed and maintained on the project homepage.
-
-# Credits
-
-The WordPress Plugin Boilerplate was started in 2011 by [Tom McFarlin](http://twitter.com/tommcfarlin/) and has since included a number of great contributions. In March of 2015 the project was handed over by Tom to Devin Vinson.
-
-The current version of the Boilerplate was developed in conjunction with [Josh Eaton](https://twitter.com/jjeaton), [Ulrich Pogson](https://twitter.com/grapplerulrich), and [Brad Vincent](https://twitter.com/themergency).
-
-The homepage is based on a design as provided by [HTML5Up](http://html5up.net), the Boilerplate logo was designed by Rob McCaskill of [BungaWeb](http://bungaweb.com), and the site `favicon` was created by [Mickey Kay](https://twitter.com/McGuive7).
-
-## Documentation, FAQs, and More
-
-If you’re interested in writing any documentation or creating tutorials please [let me know](http://devinvinson.com/contact/) .
