@@ -2,7 +2,7 @@
   "name": "WordPress-Plugin-Boilerplate",
   "version": "1.0.0",
   "description": "A standardized, organized, object-oriented foundation for building high-quality WordPress Plugins.",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "preinit": "node ./scripts/generateCert.js",
     "init": "node ./scripts/init.js",
