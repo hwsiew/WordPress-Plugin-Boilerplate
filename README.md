@@ -30,6 +30,11 @@ Clone this project to your local development machine and follow the instructions
 7. you may then start building your awesome WordPress plugin in the folder name 'plugin-name' (example-me).
 8. run `npm run stop` - to stop docker containers.
 
+Other handy scripts:
+* `npm run build` - build js files in both admin and public folder
+* `npm run build -- --env production` - production build of js files in both admin and public folder
+* `npm run watch` - auto js files build for both admin and public folder
+
 After running `npm run init`, plugin folder will be setup by replacing all folders and files with the following details. For example, when 'example me' is entered for plugin name. 
 
 * rename files from `plugin-name` to `example-me`
