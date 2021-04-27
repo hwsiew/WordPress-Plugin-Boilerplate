@@ -25,6 +25,7 @@
   "devDependencies": {
     "css-loader": "^5.2.4",
     "dotenv": "^8.2.0",
+    "prompt-sync": "^4.2.0",
     "selfsigned": "^1.10.8",
     "style-loader": "^2.0.0",
     "webpack": "^5.35.1",
