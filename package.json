@@ -9,6 +9,7 @@
     "start": "docker-compose up -d",
     "stop": "docker-compose down",
     "build": "webpack --config webpack.admin.js --config webpack.public.js",
+    "watch": "webpack --watch --config webpack.admin.js --config webpack.public.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
