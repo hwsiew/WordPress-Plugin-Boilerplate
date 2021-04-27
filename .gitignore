@@ -40,6 +40,3 @@ cache
 
 # node modules
 node_modules
-
-.env
-nginx/certs/
