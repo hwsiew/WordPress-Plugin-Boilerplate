@@ -32,6 +32,7 @@ services:
       - ./nginx/conf.d:/etc/nginx/conf.d
       - ./nginx/certs:/etc/nginx/certs
       - wordpress:/var/www/html
+      - ./${SLUG}:/var/www/html/wp-content/plugins/${SLUG}
     ports:
       - 80:80
       - 443:443
